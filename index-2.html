@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Taller Mora LLC | Auto Repair in Milwaukee, WI</title>
+  <meta name="description" content="Taller Mora LLC provides trusted auto repair, diagnostics, brakes, suspension, oil changes, maintenance, and general mechanic services in Milwaukee, WI." />
+  <meta name="keywords" content="Taller Mora LLC, auto repair Milwaukee, mechanic Milwaukee WI, brake repair Milwaukee, engine diagnostics Milwaukee, suspension repair Milwaukee, oil change Milwaukee, auto shop Milwaukee" />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:#0b0b0d;color:#f5f5f5;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:0 auto}
+    .top-bar{background:#050505;color:#fff;font-size:.9rem;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .top-bar .container{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .top-links{display:flex;gap:18px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:1000;background:rgba(13,13,15,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+    .logo{display:flex;flex-direction:column;line-height:1.1}
+    .logo strong{font-size:1.35rem;letter-spacing:.5px;color:#fff}
+    .logo span{font-size:.8rem;color:#ff2b2b;font-weight:800;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:.95rem;color:#ddd}
+    .nav-links a:hover{color:#ff2b2b}
+    .lang-toggle{border:1px solid rgba(255,255,255,.18);background:#161616;color:#fff;padding:9px 12px;border-radius:999px;cursor:pointer;font-weight:800}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:900;border:none;cursor:pointer;transition:.25s ease;text-align:center}
+    .btn-primary{background:#ff2b2b;color:#fff;box-shadow:0 12px 30px rgba(255,43,43,.3)}
+    .btn-primary:hover{background:#d91f1f;transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+    .btn-secondary:hover{border-color:#ff2b2b;color:#ff2b2b;transform:translateY(-2px)}
+    .hero{position:relative;overflow:hidden;padding:95px 0 70px;background:linear-gradient(110deg,rgba(5,5,5,.94),rgba(13,13,15,.86),rgba(255,43,43,.15)),radial-gradient(circle at top right,rgba(255,43,43,.3),transparent 32%)}
+    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,.25));pointer-events:none}
+    .hero-content{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+    .badge{display:inline-flex;background:rgba(255,43,43,.13);color:#ff4a4a;border:1px solid rgba(255,43,43,.35);padding:8px 13px;border-radius:999px;font-weight:900;font-size:.88rem;margin-bottom:18px}
+    .hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:.98;letter-spacing:-2px;margin-bottom:22px;text-transform:uppercase}
+    .hero h1 span{color:#ff2b2b}
+    .hero p{color:#ddd;font-size:1.15rem;max-width:650px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px}
+    .trust-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:16px;font-weight:900;color:#fff}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+    .hero-card h3{font-size:1.5rem;margin-bottom:15px}
+    .hero-card ul{list-style:none;display:grid;gap:12px;margin-bottom:22px}
+    .hero-card li{display:flex;gap:10px;color:#e8e8e8}
+    .hero-card li:before{content:"✓";color:#ff2b2b;font-weight:900}
+    section{padding:78px 0}
+    .section-head{margin-bottom:34px;max-width:760px}
+    .eyebrow{color:#ff2b2b;font-weight:900;text-transform:uppercase;letter-spacing:1.3px;font-size:.8rem;margin-bottom:8px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;margin-bottom:12px}
+    .section-head p{color:#cfcfcf;font-size:1.05rem}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card,.why-card,.review-card,.step-card{background:#151518;border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:22px;transition:.25s ease}
+    .service-card:hover,.why-card:hover,.step-card:hover{border-color:rgba(255,43,43,.55);transform:translateY(-4px)}
+    .service-card .icon{width:44px;height:44px;background:rgba(255,43,43,.13);color:#ff2b2b;border-radius:14px;display:grid;place-items:center;font-size:1.35rem;margin-bottom:15px}
+    .service-card h3,.why-card h3,.step-card h3{margin-bottom:8px;font-size:1.15rem}
+    .service-card p,.why-card p,.step-card p,.review-card p{color:#cfcfcf;font-size:.96rem}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .offer{background:linear-gradient(135deg,#ff2b2b,#8f1010);border-radius:30px;padding:42px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;box-shadow:0 25px 70px rgba(255,43,43,.22)}
+    .offer h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin-bottom:10px}
+    .offer p{color:#fff;max-width:650px}
+    .offer .btn{background:#fff;color:#111}
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step-num{width:42px;height:42px;border-radius:50%;background:#ff2b2b;display:grid;place-items:center;font-weight:900;margin-bottom:14px}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .stars{color:#ffcc00;margin-bottom:12px;letter-spacing:2px}
+    .quote-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}
+    .contact-panel{background:#151518;border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:28px}
+    .contact-panel h3{font-size:1.6rem;margin-bottom:14px}
+    .contact-list{list-style:none;display:grid;gap:14px;margin-top:18px}
+    .contact-list li{color:#d8d8d8}
+    form{background:#151518;border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:28px;display:grid;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,textarea,select{width:100%;padding:15px 14px;background:#0e0e10;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:#fff;font-size:1rem;outline:none}
+    input:focus,textarea:focus,select:focus{border-color:#ff2b2b}
+    textarea{min-height:130px;resize:vertical}
+    .map-card{background:#151518;border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:30px;display:grid;gap:15px}
+    .hours{display:grid;gap:8px;color:#d6d6d6}
+    footer{background:#050505;padding:35px 0;border-top:1px solid rgba(255,255,255,.08);color:#bdbdbd}
+    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .floating-call{position:fixed;right:18px;bottom:18px;z-index:1001;background:#ff2b2b;color:#fff;padding:15px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 35px rgba(255,43,43,.45)}
+    [data-es]{display:none}
+    body.spanish [data-en]{display:none}
+    body.spanish [data-es]{display:inline}
+    body.spanish p[data-es],body.spanish div[data-es],body.spanish h1[data-es],body.spanish h2[data-es],body.spanish h3[data-es],body.spanish span[data-es],body.spanish a[data-es],body.spanish button[data-es]{display:initial}
+    @media(max-width:900px){
+      .nav-links a:not(.btn){display:none}
+      .hero-content,.split,.quote-wrap,.offer{grid-template-columns:1fr}
+      .services-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
+      .steps-grid{grid-template-columns:repeat(2,1fr)}
+      .trust-row{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      nav{gap:12px}
+      .nav-links{gap:10px}
+      .services-grid,.reviews-grid,.why-grid,.steps-grid,.form-row{grid-template-columns:1fr}
+      .hero{padding-top:65px}
+      .hero h1{letter-spacing:-1px}
+      .offer{padding:28px}
+      .floating-call{left:16px;right:16px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div><span data-en>2016 W National Ave, Milwaukee, WI 53204</span><span data-es>2016 W National Ave, Milwaukee, WI 53204</span></div>
+      <div class="top-links">
+        <a href="tel:2626932952">Call: 262-693-2952</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=2016+W+National+Ave+Milwaukee+WI+53204" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">
+          <strong>Taller Mora LLC</strong>
+          <span>Milwaukee Auto Repair</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services"><span data-en>Services</span><span data-es>Servicios</span></a>
+          <a href="#about"><span data-en>About</span><span data-es>Nosotros</span></a>
+          <a href="#quote"><span data-en>Quote</span><span data-es>Cotización</span></a>
+          <a href="#location"><span data-en>Location</span><span data-es>Ubicación</span></a>
+          <button class="lang-toggle" onclick="toggleLanguage()">EN / ES</button>
+          <a class="btn btn-primary" href="tel:2626932952"><span data-en>Call Now</span><span data-es>Llamar</span></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-content">
+        <div>
+          <div class="badge"><span data-en>Local Milwaukee Auto Shop</span><span data-es>Taller Mecánico Local en Milwaukee</span></div>
+          <h1><span data-en>Trusted Auto Repair in <span>Milwaukee</span></span><span data-es>Reparación de Autos Confiable en <span>Milwaukee</span></span></h1>
+          <p><span data-en>Honest diagnostics, reliable repairs, and clear communication from a local shop that gets your vehicle back on the road without the dealership pressure.</span><span data-es>Diagnósticos honestos, reparaciones confiables y comunicación clara de un taller local que ayuda a que tu vehículo vuelva a la carretera.</span></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:2626932952"><span data-en>Call 262-693-2952</span><span data-es>Llamar 262-693-2952</span></a>
+            <a class="btn btn-secondary" href="#quote"><span data-en>Request a Quote</span><span data-es>Pedir Cotización</span></a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><span data-en>Honest Pricing</span><span data-es>Precios Honestos</span></div>
+            <div class="trust-item"><span data-en>Fast Turnaround</span><span data-es>Servicio Rápido</span></div>
+            <div class="trust-item"><span data-en>English & Spanish</span><span data-es>Inglés y Español</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3><span data-en>Need a mechanic today?</span><span data-es>¿Necesitas mecánico hoy?</span></h3>
+          <ul>
+            <li><span data-en>Check engine light diagnostics</span><span data-es>Diagnóstico de check engine</span></li>
+            <li><span data-en>Brake and suspension repairs</span><span data-es>Reparación de frenos y suspensión</span></li>
+            <li><span data-en>Oil changes and maintenance</span><span data-es>Cambios de aceite y mantenimiento</span></li>
+            <li><span data-en>No surprise work without approval</span><span data-es>Sin trabajos sorpresa sin aprobación</span></li>
+          </ul>
+          <a class="btn btn-primary" href="#quote"><span data-en>Get My Quote</span><span data-es>Quiero Cotización</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow"><span data-en>Services</span><span data-es>Servicios</span></div>
+          <h2><span data-en>Auto repair services built around real driver needs.</span><span data-es>Servicios mecánicos para las necesidades reales de tu vehículo.</span></h2>
+          <p><span data-en>From daily maintenance to diagnostics and repairs, Taller Mora helps Milwaukee drivers keep their vehicles safe, reliable, and ready for the road.</span><span data-es>Desde mantenimiento hasta diagnósticos y reparaciones, Taller Mora ayuda a conductores en Milwaukee a mantener sus vehículos seguros y confiables.</span></p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card"><div class="icon">🛑</div><h3>Brake Repair</h3><p>Pads, rotors, brake noise, soft pedal concerns, and stopping performance.</p></div>
+          <div class="service-card"><div class="icon">🔧</div><h3>Suspension & Steering</h3><p>Shocks, struts, control arms, ball joints, tie rods, and ride issues.</p></div>
+          <div class="service-card"><div class="icon">⚠️</div><h3>Check Engine Light</h3><p>Scan, diagnose, and explain what your vehicle needs before repairs begin.</p></div>
+          <div class="service-card"><div class="icon">🛢️</div><h3>Oil Changes</h3><p>Routine oil service and maintenance to help protect your engine.</p></div>
+          <div class="service-card"><div class="icon">🔋</div><h3>Battery & Alternator</h3><p>Starting, charging, battery drain, and electrical system concerns.</p></div>
+          <div class="service-card"><div class="icon">❄️</div><h3>Heating & Cooling</h3><p>Cooling system, overheating, heater concerns, and A/C related service.</p></div>
+          <div class="service-card"><div class="icon">🚗</div><h3>Tune-Ups</h3><p>Spark plugs, filters, maintenance checks, and performance upkeep.</p></div>
+          <div class="service-card"><div class="icon">🔍</div><h3>Diagnostics</h3><p>We inspect the issue and give you clear next steps before repair work.</p></div>
+          <div class="service-card"><div class="icon">✅</div><h3>General Repairs</h3><p>Everyday mechanic work for cars, SUVs, and light-duty vehicles.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="offer">
+          <div>
+            <h2><span data-en>New Customer Special</span><span data-es>Especial Para Nuevos Clientes</span></h2>
+            <p><span data-en>Get 10% off labor on your first repair visit. Mention this website when calling or visiting Taller Mora LLC.</span><span data-es>Recibe 10% de descuento en labor en tu primera reparación. Menciona esta página al llamar o visitar Taller Mora LLC.</span></p>
+          </div>
+          <a class="btn" href="tel:2626932952"><span data-en>Claim Offer</span><span data-es>Usar Oferta</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow"><span data-en>Why Choose Us</span><span data-es>Por Qué Elegirnos</span></div>
+            <h2><span data-en>A local shop that keeps repairs simple and honest.</span><span data-es>Un taller local que hace las reparaciones simples y honestas.</span></h2>
+            <p><span data-en>Taller Mora LLC is owned by Fransisco Mora and serves drivers from the Milwaukee area with honest service, clear communication, and dependable repair work.</span><span data-es>Taller Mora LLC es operado por Fransisco Mora y sirve a conductores del área de Milwaukee con servicio honesto, comunicación clara y reparaciones confiables.</span></p>
+          </div>
+          <a class="btn btn-primary" href="#quote"><span data-en>Request Service</span><span data-es>Pedir Servicio</span></a>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card"><h3>Local Service</h3><p>Milwaukee-based shop focused on helping local drivers.</p></div>
+          <div class="why-card"><h3>Clear Quotes</h3><p>We explain the problem before moving forward with repairs.</p></div>
+          <div class="why-card"><h3>Fair Pricing</h3><p>No dealership pressure. Just straightforward mechanic work.</p></div>
+          <div class="why-card"><h3>Bilingual Friendly</h3><p>Service support available in English and Spanish.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow"><span data-en>Simple Process</span><span data-es>Proceso Simple</span></div>
+          <h2><span data-en>How your repair visit works.</span><span data-es>Cómo funciona tu visita.</span></h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card"><div class="step-num">1</div><h3>Call or Request</h3><p>Tell us what issue you’re having and what vehicle you drive.</p></div>
+          <div class="step-card"><div class="step-num">2</div><h3>Bring It In</h3><p>Visit the shop at 2016 W National Ave in Milwaukee.</p></div>
+          <div class="step-card"><div class="step-num">3</div><h3>Approve Repair</h3><p>We explain what we find before repair work begins.</p></div>
+          <div class="step-card"><div class="step-num">4</div><h3>Drive Confident</h3><p>Get back on the road with work you can feel good about.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow"><span data-en>Customer Feedback</span><span data-es>Opiniones</span></div>
+          <h2><span data-en>Built to earn trust one repair at a time.</span><span data-es>Trabajando para ganar confianza en cada reparación.</span></h2>
+          <p><span data-en>Replace these sample reviews with real customer reviews once available.</span><span data-es>Reemplaza estas opiniones de ejemplo con reseñas reales cuando estén disponibles.</span></p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card"><div class="stars">★★★★★</div><p>“Great service, honest pricing, and fast work. Definitely recommend this shop.”</p></div>
+          <div class="review-card"><div class="stars">★★★★★</div><p>“Fransisco explained the repair clearly and got my car back on the road.”</p></div>
+          <div class="review-card"><div class="stars">★★★★★</div><p>“Good local mechanic shop in Milwaukee. Fair and professional.”</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote">
+      <div class="container quote-wrap">
+        <div class="contact-panel">
+          <div class="eyebrow"><span data-en>Get a Quote</span><span data-es>Pedir Cotización</span></div>
+          <h3><span data-en>Need repair pricing?</span><span data-es>¿Necesitas precio para reparación?</span></h3>
+          <p><span data-en>Send your vehicle information and what service you need. You can also call directly for faster help.</span><span data-es>Envía la información de tu vehículo y el servicio que necesitas. También puedes llamar directamente para ayuda más rápida.</span></p>
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> <a href="tel:2626932952">262-693-2952</a></li>
+            <li><strong>Address:</strong> 2016 W National Ave, Milwaukee, WI 53204</li>
+            <li><strong>Owner:</strong> Fransisco Mora</li>
+          </ul>
+        </div>
+
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input type="tel" name="Phone" placeholder="Phone Number" required />
+          </div>
+          <div class="form-row">
+            <input type="text" name="Vehicle" placeholder="Year / Make / Model" />
+            <select name="Service Needed">
+              <option value="">Service Needed</option>
+              <option>Brake Repair</option>
+              <option>Suspension / Steering</option>
+              <option>Check Engine Light</option>
+              <option>Oil Change</option>
+              <option>Diagnostics</option>
+              <option>General Repair</option>
+            </select>
+          </div>
+          <textarea name="Message" placeholder="Tell us what is going on with the vehicle"></textarea>
+          <button class="btn btn-primary" type="submit"><span data-en>Submit Quote Request</span><span data-es>Enviar Cotización</span></button>
+          <p style="font-size:.88rem;color:#aaa;">Before launch: replace youremail@example.com with the email that should receive quote requests.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="location">
+      <div class="container split">
+        <div class="map-card">
+          <div class="eyebrow"><span data-en>Visit the Shop</span><span data-es>Visita el Taller</span></div>
+          <h2>Taller Mora LLC</h2>
+          <p>2016 W National Ave<br>Milwaukee, WI 53204</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=2016+W+National+Ave+Milwaukee+WI+53204" target="_blank" rel="noopener"><span data-en>Get Directions</span><span data-es>Cómo Llegar</span></a>
+        </div>
+        <div class="map-card">
+          <div class="eyebrow"><span data-en>Hours</span><span data-es>Horario</span></div>
+          <h2><span data-en>Standard Business Hours</span><span data-es>Horario de Servicio</span></h2>
+          <div class="hours">
+            <div><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</div>
+            <div><strong>Saturday:</strong> 9:00 AM - 3:00 PM</div>
+            <div><strong>Sunday:</strong> Closed</div>
+          </div>
+          <a class="btn btn-secondary" href="tel:2626932952"><span data-en>Call Before Visiting</span><span data-es>Llamar Antes de Visitar</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>
+        <strong>Taller Mora LLC</strong><br>
+        2016 W National Ave, Milwaukee, WI 53204
+      </div>
+      <div>
+        <a href="tel:2626932952">262-693-2952</a><br>
+        © 2026 Taller Mora LLC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-call" href="tel:2626932952"><span data-en>Call Now</span><span data-es>Llamar Ahora</span></a>
+
+  <script>
+    function toggleLanguage(){document.body.classList.toggle('spanish')}
+  </script>
+</body>
+</html>
